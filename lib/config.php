@@ -13,7 +13,7 @@ $togb = $tomb*1024;
 //Define DB Connection  数据库信息
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PWD','ali20175480');
+define('DB_PWD','password');
 define('DB_DBNAME','ss');
 define('DB_CHARSET','utf8');
 define('DB_TYPE','mysql'); 
@@ -82,7 +82,7 @@ $mail_smtp_Server = "smtp.qq.com";
 //邮件帐号
 $mail_smtp_Account = "954977564@qq.com";
 //邮件密码
-$mail_smtp_password = "lzcaxyuatvgrbcfb";
+$mail_smtp_password = "your email code ";
 
 
 
