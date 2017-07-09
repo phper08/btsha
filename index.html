@@ -7,12 +7,33 @@
     <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
 
     <title>SS管理系统</title>
+		<style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
 
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+    <style class="vjs-styles-dimensions">
+      .preview-player-dimensions {
+        width: 960px;
+        height: 400px;
+      }
+
+      .preview-player-dimensions.vjs-fluid {
+        padding-top: 41.66666666666667%;
+      }
+    </style>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-	<link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+	<link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">   
+	<link href="css/advanced.css" rel="stylesheet">
+	<link href="css/videojs-playlist-ui.vertical.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/animated-logo.min.css"><!-- Logo -->
@@ -120,21 +141,24 @@
 		 <section id="services" class="box-content box-2">
 			<div class="container">
 			<div class="row heading">
-                                        <div class="col-lg-12">
-                                                <h2>福利视频</h2>
-                                                <hr>
-                                                <!--<a class="intro" href="http://www.bilibili.com/video/av5384127/" target="_blank">来源bilibili 极乐净土</a>
-                               				-->
-				         </div>
-                          </div>
-                          <div class="row">
-					<div class="col-sm-12 box-item" >
-						<video id="my-video" class="video-js" controls preload="auto" autoplay="true" loop="true" fluid="true"
-  							poster="video/av11767075.png" data-setup="{}">
-    							<source src="video/av11767075.mp4" type='video/mp4'>
+             <div class="col-lg-12">
+                <h2>福利视频</h2>
+                 <hr>
+								<div class="intro">视频来源bilibili,仅供测速，若侵权，请联系删除</div>
+              </div>
+      </div>
+                         
+					<section class="main-preview-player">
+						<video id="my-video" class="video-js vjs-fluid vjs-paused preview-player-dimensions vjs-controls-enabled vjs-workinghover vjs-mux vjs-user-inactive" controls autoplay >
   						</video>
-					</div>
-			  </div>
+  						<div class="playlist-container preview-player-dimensions vjs-fluid">
+  							<ol class="vjs-playlist vjs-csspointerevents vjs-mouse"></ol>
+							</div>
+
+					</section>
+					
+					
+			  
 			</div>
 		</section>	
 	</div>
@@ -156,5 +180,72 @@
 	<script src="js/classie.js"></script>
 	<script src="js/cbpAnimatedHeader.js"></script>
 	<script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+	<script src="js/advanced.js"></script>
+	<script>
+	var player = videojs('my-video');
+		
+	player.playlist([
+		{
+      name: '小乔 锦鲤抄',
+      sources: [
+        { src: 'video/av11824017.mp4', type: 'video/mp4' },
+      ],
+      thumbnail:[
+      	{
+          src: 'video/av11824017.jpg'
+        }
+      ]
+    },
+    {
+      name: '小姐姐 桃源恋歌',
+      sources: [
+        { src: 'video/av11807586.mp4', type: 'video/mp4' },
+      ],
+      thumbnail:[
+      	{
+          src: 'video/av11807586.jpg'
+        }
+      ]
+    },
+  
+    {
+      name: '小伙子，你渴望胖次吗',
+      sources: [
+        { src: 'video/av8118555.mp4', type: 'video/mp4' },
+      ],
+     thumbnail:[
+      	{
+          src: 'video/av8118555.jpg'
+        }
+      ]
+    },
+     {
+      name: '天依 桃园恋歌',
+      sources: [
+        { src: 'video/av11767075.mp4', type: 'video/mp4' },
+      ],
+      thumbnail:[
+      	{
+          src: 'video/av11767075.jpg'
+        }
+      ]
+    },
+    {
+      name: '洛天依会发光的胖次',
+      sources: [
+        { src: 'video/av6640689.mp4', type: 'video/mp4' },
+      ],
+       thumbnail:[
+      	{
+          src: 'video/av6640689.jpg'
+        }
+      ]
+    },
+    ]);
+    //auto play next 
+		player.playlist.autoadvance(1);	
+		player.playlistUi();
+	</script>
 </body>
 </html>
+                                                        
